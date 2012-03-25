@@ -14,7 +14,7 @@ sub invoke {
   my ($first, $second) = @_;
 
   my $input = $first . "\n" . $second;
-  return `echo "$input" | $dir/ex2-3.pl` + 0; # remove \n and conver to number
+  return `echo "$input" | $dir/ex2-4.pl` + 0; # remove \n and conver to number
 }
 
 plan tests => 1 * blocks;

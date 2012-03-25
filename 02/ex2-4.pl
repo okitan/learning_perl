@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-my $first  = <STDIN> + 0;
-my $second = <STDIN> + 0;
+chomp(my $first  = <STDIN>);
+chomp(my $second = <STDIN>);
 
 say $first * $second;
