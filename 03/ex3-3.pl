@@ -13,10 +13,6 @@ chomp(my @names = <STDIN>);
 
 my @sorted_names = sort(@names);
 
-foreach my $name (@sorted_names) {
-  if ($newline) {
-    say $name;
-  } else {
-    print $name;
-  }
+foreach (@sorted_names) {
+  $newline ? say : print;
 }
