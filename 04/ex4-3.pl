@@ -7,11 +7,14 @@ use warnings;
 use List::Util qw(sum);
 
 sub average {
+  return if @_ == 0;
+
   # XXX: my $n = @_; is zero if I omit &
   sum(@_) / @_;
 }
 
 sub above_average {
+  #my $average = average(@_);
   my $average = &average; # XXX: I don't know why this require &
   grep { $_ > $average; } @_;
 
