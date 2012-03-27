@@ -1,0 +1,20 @@
+#!/usr/bin/env perl
+
+use 5.010;
+use strict;
+use warnings;
+
+while (<>) {
+  chomp;
+  #if (/match/) { # ex8-1
+  if (/\A.*?[\W]*(?<matched>[\w]*a)(?:([\W]+.{0,4}).*)?\Z/) { # ex8-2 ex8-3 ex8-4 ex8-5
+    say $_ . " contains \"$1\""; # ex8-3
+
+    my $followed = defined $2 ? $2 : ""; # ex8-5
+    say $_ . " contains \"$+{matched}\" and follows \"$followed\""; # ex8-4 ex8-5
+
+    say "Matched: |$`<$&>$'|";
+  } else {
+    say "No match: |$_|";
+  }
+}
