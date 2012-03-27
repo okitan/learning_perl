@@ -5,4 +5,4 @@ use strict;
 use warnings;
 
 chomp(my @lines = <>);
-say for grep /\W+\Z/, @lines;
+say for grep /\s+\Z/, @lines;

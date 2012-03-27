@@ -7,7 +7,8 @@ use warnings;
 while (<>) {
   chomp;
   #if (/match/) { # ex8-1
-  if (/\A.*?[\W]*(?<matched>[\w]*a)(?:([\W]+.{0,4}).*)?\Z/) { # ex8-2 ex8-3 ex8-4 ex8-5
+  if (/\A.*?[\W]*(?<matched>\w*a)(?:(\W+.{0,4}).*)?\Z/) { # ex8-2 ex8-3 ex8-4 ex8-5
+  #if (/\A.*(?<matched>\b\w*a\b)(.{0,5}).*\Z/) { # \b cause multi-byte problem
     say $_ . " contains \"$1\""; # ex8-3
 
     my $followed = defined $2 ? $2 : ""; # ex8-5
